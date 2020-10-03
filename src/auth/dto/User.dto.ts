@@ -4,4 +4,6 @@ export class UserDto {
     name: string;
     uid: string;
     role: UserRole;
+    photoURL: string;
+    finishInfo: boolean;
 }
