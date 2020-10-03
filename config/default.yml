@@ -1,0 +1,7 @@
+server:
+  port: 7000
+
+firebase:
+  project_id: ""
+  private_key: ""
+  client_email: ""
