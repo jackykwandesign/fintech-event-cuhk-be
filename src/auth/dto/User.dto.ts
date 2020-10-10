@@ -6,4 +6,5 @@ export class UserDto {
     role: UserRole;
     photoURL: string;
     finishInfo: boolean;
+    email: string;
 }

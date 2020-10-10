@@ -13,7 +13,7 @@ export class HttpStrategy extends PassportStrategy(Strategy) {
     }
     async validate(token: string){
         const user = await this.authService.validateUser(token);
-        console.log("user", user)
+        // console.log("user", user)
         if(!user){ // 如果用token找不到使用者，就丟unauthorized exception
             throw new UnauthorizedException();
         }

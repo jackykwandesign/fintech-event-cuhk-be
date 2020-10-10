@@ -3,6 +3,8 @@ import { AuthModule } from './auth/auth.module';
 import { FirebaseAdminModule } from '@aginix/nestjs-firebase-admin'
 import * as admin from 'firebase-admin'
 import { ServiceAccount} from 'firebase-admin'
+import { UserModule } from './user/user.module';
+import { WebinarModule } from './webinar/webinar.module';
 import * as config from 'config'
 const firebaseConfig = config.get('firebase')
 
@@ -20,6 +22,8 @@ let serviceAccount: ServiceAccount = {
         credential: admin.credential.cert(serviceAccount)
       })
     }),
+    UserModule,
+    WebinarModule,
   ],
   controllers: [],
   providers: [],

@@ -30,9 +30,10 @@ export class AuthService {
         try {
             const res = await this.fireStore.collection('User').doc(userDocID).update({
                 kycData:formData,
-                finishInfo:true
+                finishInfo:true,
+                name: formData.firstName + " " + formData.lastName
             })
-            console.log("Document successfully updated!", res);
+            // console.log("Document successfully updated!", res);
 
         } catch (error) {
             console.error("Error updating document: ", error);
@@ -57,52 +58,59 @@ export class AuthService {
     //     }
     // }
     async register(req:Request){
-        console.log("Enter register")
+        // console.log("Enter register")
         const { authorization } = req.headers
 
         if (!authorization)
             throw new UnauthorizedException()
-        console.log("Have authorization")
+        // console.log("Have authorization")
 
         if (!authorization.startsWith('Bearer'))
             throw new UnauthorizedException()
-        console.log("Have Bearer")
+        // console.log("Have Bearer")
 
         const split = authorization.split('Bearer ')
         if (split.length !== 2)
             throw new UnauthorizedException()
-        console.log("Have Bearer 2")
+        // console.log("Have Bearer 2")
 
         const token = split[1]
-        console.log("finding user, token: ", token)
+        // console.log("finding user, token: ", token)
         const found = await this.validateUser(token)
         
         if(found){
             throw new BadRequestException('already registered')
         }
-        console.log("user not found")
+        // console.log("user not found")
         try {
+            // console.log("Verifying Firebase token")
             const firebaseUser = await this.firebaseAuth.auth.verifyIdToken(token)
+            // console.log("Verifying Firebase token success ")
+            // console.log("Getting User data")
             const userData = await this.firebaseAuth.auth.getUser(firebaseUser.uid)
+            // console.log("Getting User data success")
             let newUser:UserDto = {
-                name: userData.displayName,
+                name: userData.displayName ? userData.displayName : "",
                 uid: userData.uid,
-                photoURL: userData.photoURL,
+                photoURL: userData.photoURL ? userData.photoURL : "",
                 role: UserRole.USER,
-                finishInfo: false
+                finishInfo: false,
+                email: userData.email
             }
+            // console.log("new User", newUser)
             await this.fireStore.collection('User').add(newUser)
             return;
         } catch (error) {
+            console.error("error",error)
             throw new NotFoundException();
         }
     }
 
     async validateUser(token: string){
         try {
-            console.log("validate User, token: ", token)
+            // console.log("validate User, token: ", token)
             const firebaseUser = await this.firebaseAuth.auth.verifyIdToken(token)
-            console.log("firebaseUser.uid", firebaseUser.uid)
+            // console.log("firebaseUser.uid", firebaseUser.uid)
 
             const users = await this.fireStore.collection('User').where('uid','==', firebaseUser.uid).get();
             // const users = await this.fireStore.collection('User').get();

@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as config from 'config'
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { Request } from 'express';
 const serverConfig = config.get('server')
 
@@ -16,6 +16,11 @@ async function bootstrap() {
   //   req.headers.
   //   next();
   // })
+  app.useGlobalPipes(
+    new ValidationPipe({
+      // disableErrorMessages: true,
+    }),
+  );
 
 
   let port = process.env.PORT || serverConfig.port

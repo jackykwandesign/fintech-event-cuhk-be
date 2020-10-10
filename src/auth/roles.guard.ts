@@ -32,14 +32,14 @@ export class RolesGuard implements CanActivate {
         if(typeof userRoles === 'string'){
             // console.log("string userRoles", userRoles)
             if(roles.includes(userRoles)){
-                // console.log('match role')
+                console.log('match role')
                 return true;
             }
         }
         if(Array.isArray(userRoles)){
             // console.log("string Array", userRoles)
             if( roles.some( role => userRoles.includes(role) ) ){
-                // console.log('match role')
+                console.log('match role')
                 return true;
             }
         }       
