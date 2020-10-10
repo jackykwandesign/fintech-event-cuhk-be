@@ -10,9 +10,9 @@ import * as config from 'config'
 const firebaseConfig = config.get('firebase')
 
 let serviceAccount: ServiceAccount = {
-  projectId: process.env.FIREBASE_PROJECT_ID || firebaseConfig.project_id,
-  privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') || firebaseConfig.private_key.replace(/\\n/g, '\n'),
-  clientEmail: process.env.FIREBASE_CLIENT_EMAIL || firebaseConfig.client_email,
+  projectId: process.env.NODE_ENV === "production" ? process.env.FIREBASE_PROJECT_ID : firebaseConfig.project_id,
+  privateKey: process.env.NODE_ENV === "production" ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : firebaseConfig.private_key.replace(/\\n/g, '\n'),
+  clientEmail: process.env.NODE_ENV === "production" ? process.env.FIREBASE_CLIENT_EMAIL : firebaseConfig.client_email,
 }
 
 @Module({
