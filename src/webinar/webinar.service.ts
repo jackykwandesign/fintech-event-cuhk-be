@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class WebinarService {
     constructor(
-        private firebaseAuth: FirebaseAuthenticationService,
+        // private firebaseAuth: FirebaseAuthenticationService,
         private fireStore: FirebaseFirestoreService
     ){}
 
