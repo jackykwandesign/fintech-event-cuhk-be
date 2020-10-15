@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebinarController = void 0;
 const common_1 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
+const roles_guard_1 = require("../auth/roles.guard");
 const webinar_service_1 = require("./webinar.service");
 let WebinarController = class WebinarController {
     constructor(webinarService) {
@@ -28,6 +30,7 @@ __decorate([
 ], WebinarController.prototype, "getAllWebinar", null);
 WebinarController = __decorate([
     common_1.Controller('webinar'),
+    common_1.UseGuards(passport_1.AuthGuard('bearer'), roles_guard_1.RolesGuard),
     __metadata("design:paramtypes", [webinar_service_1.WebinarService])
 ], WebinarController);
 exports.WebinarController = WebinarController;
