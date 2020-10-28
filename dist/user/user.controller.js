@@ -51,7 +51,6 @@ __decorate([
 ], UserController.prototype, "getAllParticipant", null);
 __decorate([
     common_1.Get("/shareParticipant"),
-    roles_decorator_1.Roles(user_role_enum_1.UserRole.ADMIN, user_role_enum_1.UserRole.HELPER),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)

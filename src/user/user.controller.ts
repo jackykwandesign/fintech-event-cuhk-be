@@ -25,7 +25,7 @@ export class UserController {
     }
 
     @Get("/shareParticipant")
-    @Roles(UserRole.ADMIN,UserRole.HELPER)
+    // @Roles(UserRole.ADMIN,UserRole.HELPER)
     getShareParticipant(
         // @GetUser() user:UserDto,
         // @Body('formData') formData:any

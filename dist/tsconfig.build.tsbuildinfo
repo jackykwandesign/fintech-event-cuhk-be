@@ -2632,7 +2632,7 @@
         "affectsGlobalScope": false
       },
       "../src/user/user.controller.ts": {
-        "version": "ffa8f70a6f7993de093c4ce2774be1e0892f1cda336de5f1c0bfd4cec76eac36",
+        "version": "5b22983ef9b3cf09712ba0297b3d498bf185ec173f40500fe560509f9d51a67e",
         "signature": "dbdadecf8e37ce1614810b60ab90911969ce190cf9e25b0ae9d90dbc79e70b46",
         "affectsGlobalScope": false
       },
@@ -7756,7 +7756,6 @@
       "../src/auth/user-role.enum.ts",
       "../src/main.ts",
       "../src/user/dto/userOptDto.dto.ts",
-      "../src/user/user.controller.ts",
       "../src/user/user.module.ts",
       "../src/user/user.service.ts",
       "../src/webinar/webinar.controller.ts",
