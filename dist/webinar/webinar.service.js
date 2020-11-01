@@ -18,8 +18,34 @@ let WebinarService = class WebinarService {
     }
     async getAllWebinar() {
         const snapshot = await this.fireStore.collection('Webinar').get();
-        const data = snapshot.docs.map(doc => doc.data());
-        return data;
+        let resData = [];
+        snapshot.docs.map(doc => {
+            resData.push(Object.assign({ id: doc.id }, doc.data()));
+        });
+        return resData;
+    }
+    async findWebinar(id) {
+        const snapshot = await this.fireStore.collection('Webinar').where('id', '==', id).get();
+        if (snapshot.docs.length === 0) {
+            throw new common_1.NotFoundException();
+        }
+        else {
+            return snapshot.docs[0].data();
+        }
+    }
+    async updateWebinarByID(updateWebinarDto) {
+        try {
+            let data = {};
+            const res = await this.fireStore.collection('Webinar').doc(updateWebinarDto.id).update({
+                zoomURL: updateWebinarDto.zoomURL ? updateWebinarDto.zoomURL : "",
+                replayURL: updateWebinarDto.replayURL ? updateWebinarDto.replayURL : ""
+            });
+            console.log("Document successfully updated!", res);
+        }
+        catch (error) {
+            console.error(error);
+            throw new common_1.BadRequestException();
+        }
     }
 };
 WebinarService = __decorate([

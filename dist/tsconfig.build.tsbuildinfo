@@ -2632,7 +2632,7 @@
         "affectsGlobalScope": false
       },
       "../src/user/user.service.ts": {
-        "version": "0a1d7d4dc0c8333a856930118d1fe5af0e176a5ad19790a21f1fce14e23736e7",
+        "version": "c79eaded147e5587fd84ade0cd58d4a249af593f3ec55cd93cfedd9c92657682",
         "signature": "26be2cce274ca8faae35f747cc1cb2bea022ee04f2a4cbe3a761846b09051b02",
         "affectsGlobalScope": false
       },
@@ -2646,14 +2646,19 @@
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329",
         "affectsGlobalScope": false
       },
+      "../src/webinar/dto/update-webinar.dto.ts": {
+        "version": "2c3cd6c9555351d64b3fbed800305e6c9f0d66fa008e297d178315281916b4d0",
+        "signature": "6d437a59437364a4c1d8b65d02f4413b07c829d2cad3588cb03bcfa082562d29",
+        "affectsGlobalScope": false
+      },
       "../src/webinar/webinar.service.ts": {
-        "version": "58023ab835bda828330dd0f340a9438ddd33923df462b8467fd29d3ec4745ae0",
-        "signature": "8d76e76d2c6fd96d9d2ce42515e0e3262cbd35bba8a8680014544d1899ac6823",
+        "version": "8c8dae0aaa2c7950ff051de542b1a362c438269d218ad0d140add291bd1d5d38",
+        "signature": "afc0ab094d99f7afc56577d76562fc78b62c2e66fd2b1d56aa0d33975c67cc31",
         "affectsGlobalScope": false
       },
       "../src/webinar/webinar.controller.ts": {
-        "version": "4a17f4c25532088bda70001e45c0a92f26359cf813843418d99d2d870a29ef87",
-        "signature": "1789a4d15b8338e8b0f4d965306b99cfc39509aa9d16d6133850c6c51ee1a268",
+        "version": "6e973467d6168b2582129f0443dde1f100e6245dc905eedd9c341c5e7fe37eec",
+        "signature": "3c6b9ec505a74fac098473ff2a7a8300173e9ae49eb7eee28f9686ea9f191f80",
         "affectsGlobalScope": false
       },
       "../src/webinar/webinar.module.ts": {
@@ -5081,10 +5086,16 @@
         "../src/auth/user-role.enum.ts",
         "../src/user/dto/userOptDto.dto.ts"
       ],
+      "../src/webinar/dto/update-webinar.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
       "../src/webinar/webinar.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/auth/roles.decorator.ts",
         "../src/auth/roles.guard.ts",
+        "../src/auth/user-role.enum.ts",
+        "../src/webinar/dto/update-webinar.dto.ts",
         "../src/webinar/webinar.service.ts"
       ],
       "../src/webinar/webinar.module.ts": [
@@ -5095,7 +5106,8 @@
       ],
       "../src/webinar/webinar.service.ts": [
         "../node_modules/@aginix/nestjs-firebase-admin/dist/index.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/webinar/dto/update-webinar.dto.ts"
       ]
     },
     "exportedModulesMap": {
@@ -7183,10 +7195,12 @@
         "../src/user/dto/userOptDto.dto.ts"
       ],
       "../src/webinar/webinar.controller.ts": [
+        "../src/webinar/dto/update-webinar.dto.ts",
         "../src/webinar/webinar.service.ts"
       ],
       "../src/webinar/webinar.service.ts": [
-        "../node_modules/@aginix/nestjs-firebase-admin/dist/index.d.ts"
+        "../node_modules/@aginix/nestjs-firebase-admin/dist/index.d.ts",
+        "../src/webinar/dto/update-webinar.dto.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -7773,6 +7787,7 @@
       "../src/user/user.controller.ts",
       "../src/user/user.module.ts",
       "../src/user/user.service.ts",
+      "../src/webinar/dto/update-webinar.dto.ts",
       "../src/webinar/webinar.controller.ts",
       "../src/webinar/webinar.module.ts",
       "../src/webinar/webinar.service.ts"

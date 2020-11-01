@@ -47,11 +47,18 @@ require('dotenv').config();
 import * as config from 'config'
 const smtpConfig = config.get('smtp')
 
+// let smtpAccount = {
+//     host: process.env.NODE_ENV === "production" ? process.env.SMTP_HOST : smtpConfig.host,
+//     port: process.env.NODE_ENV === "production" ? Number(process.env.SMTP_PORT) : smtpConfig.port,
+//     email: process.env.NODE_ENV === "production" ? process.env.SMTP_EMAIL : smtpConfig.email,
+//     password: process.env.NODE_ENV === "production" ? process.env.SMTP_PASSWORD : smtpConfig.password,
+// }
+
 let smtpAccount = {
-    host: process.env.NODE_ENV === "production" ? process.env.SMTP_HOST : smtpConfig.host,
-    port: process.env.NODE_ENV === "production" ? process.env.SMTP_PORT : smtpConfig.port,
-    email: process.env.NODE_ENV === "production" ? process.env.SMTP_EMAIL : smtpConfig.email,
-    password: process.env.NODE_ENV === "production" ? process.env.SMTP_PASSWORD : smtpConfig.password,
+    host: "smtp.cintec.cuhk.edu.hk",
+    port: 25,
+    email: "finteconf@cintec.cuhk.edu.hk",
+    password: "cin@1358",
 }
 
 @Injectable()
