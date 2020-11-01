@@ -2621,19 +2621,24 @@
         "signature": "1d5f30cbd06ffa2aab22346b087e140f069851c17b91189be8d1e168d53f9f93",
         "affectsGlobalScope": false
       },
+      "../src/user/dto/messageDto.dto.ts": {
+        "version": "23f67cdbf6a1e0b5b0a902198e767767f28240b19c661cdf5b4149cdff940ea8",
+        "signature": "ced2cbcfab25cc9a33c22460ca0a2dc06b31fda28005c4acf85db490ff1e3bd5",
+        "affectsGlobalScope": false
+      },
       "../src/user/dto/userOptDto.dto.ts": {
         "version": "062fd66e204244448e11dc3083f34983f3bc955927c87db58338f36567629a16",
         "signature": "6eed17ada9ddafe2419310735c6cc68f04556433e5654e6ad7b8d45685c46cc3",
         "affectsGlobalScope": false
       },
       "../src/user/user.service.ts": {
-        "version": "e178bddbd6fe2f6b11fa9fe6509d1f4be4e4c88b060926eb630611bac21be21f",
-        "signature": "cf0666e0ee19cb727cca00eb597506cfc82e0f6d70172e12955c283a1d78126c",
+        "version": "0a1d7d4dc0c8333a856930118d1fe5af0e176a5ad19790a21f1fce14e23736e7",
+        "signature": "26be2cce274ca8faae35f747cc1cb2bea022ee04f2a4cbe3a761846b09051b02",
         "affectsGlobalScope": false
       },
       "../src/user/user.controller.ts": {
-        "version": "5b22983ef9b3cf09712ba0297b3d498bf185ec173f40500fe560509f9d51a67e",
-        "signature": "dbdadecf8e37ce1614810b60ab90911969ce190cf9e25b0ae9d90dbc79e70b46",
+        "version": "41ecca815ec83c283107a54462e2f51beca84a139e6abaf0de6fdbaf4c44dcdb",
+        "signature": "3e37c1c9c80eb2a5cca473c5fcf45eba1be3ca82fe130731ab83ac0ea9ef96f6",
         "affectsGlobalScope": false
       },
       "../src/user/user.module.ts": {
@@ -5045,6 +5050,9 @@
         "../node_modules/@types/express/index.d.ts",
         "../src/app.module.ts"
       ],
+      "../src/user/dto/messageDto.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
       "../src/user/dto/userOptDto.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
@@ -5056,6 +5064,7 @@
         "../src/auth/roles.decorator.ts",
         "../src/auth/roles.guard.ts",
         "../src/auth/user-role.enum.ts",
+        "../src/user/dto/messageDto.dto.ts",
         "../src/user/dto/userOptDto.dto.ts",
         "../src/user/user.service.ts"
       ],
@@ -7162,11 +7171,15 @@
         "../node_modules/@nestjs/core/index.d.ts"
       ],
       "../src/user/user.controller.ts": [
+        "../src/auth/dto/User.dto.ts",
+        "../src/user/dto/messageDto.dto.ts",
         "../src/user/dto/userOptDto.dto.ts",
         "../src/user/user.service.ts"
       ],
       "../src/user/user.service.ts": [
         "../node_modules/@aginix/nestjs-firebase-admin/dist/index.d.ts",
+        "../src/auth/dto/User.dto.ts",
+        "../src/auth/user-role.enum.ts",
         "../src/user/dto/userOptDto.dto.ts"
       ],
       "../src/webinar/webinar.controller.ts": [
@@ -7755,7 +7768,9 @@
       "../src/auth/roles.guard.ts",
       "../src/auth/user-role.enum.ts",
       "../src/main.ts",
+      "../src/user/dto/messageDto.dto.ts",
       "../src/user/dto/userOptDto.dto.ts",
+      "../src/user/user.controller.ts",
       "../src/user/user.module.ts",
       "../src/user/user.service.ts",
       "../src/webinar/webinar.controller.ts",

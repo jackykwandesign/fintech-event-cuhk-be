@@ -20,6 +20,7 @@ const get_user_decorator_1 = require("../auth/get-user.decorator");
 const roles_decorator_1 = require("../auth/roles.decorator");
 const roles_guard_1 = require("../auth/roles.guard");
 const user_role_enum_1 = require("../auth/user-role.enum");
+const messageDto_dto_1 = require("./dto/messageDto.dto");
 const userOptDto_dto_1 = require("./dto/userOptDto.dto");
 const user_service_1 = require("./user.service");
 let UserController = class UserController {
@@ -40,6 +41,15 @@ let UserController = class UserController {
     }
     createHelper(userOptDto) {
         return this.userService.createHelper(userOptDto);
+    }
+    sendInternalMessage(user, messageDto) {
+        return this.userService.sendInternalMessage(user, messageDto.receiverEmail, messageDto.message);
+    }
+    updateLoginTime(user) {
+        return this.userService.updateLoginTime(user);
+    }
+    getUserByEmail(email) {
+        return this.userService.getUserByEmail(email);
     }
 };
 __decorate([
@@ -78,6 +88,29 @@ __decorate([
     __metadata("design:paramtypes", [userOptDto_dto_1.UserOptDto]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "createHelper", null);
+__decorate([
+    common_1.Post("/message"),
+    __param(0, get_user_decorator_1.GetUser()),
+    __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [User_dto_1.UserDto,
+        messageDto_dto_1.MessageDto]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "sendInternalMessage", null);
+__decorate([
+    common_1.Post("/updateLoginTime"),
+    __param(0, get_user_decorator_1.GetUser()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [User_dto_1.UserDto]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "updateLoginTime", null);
+__decorate([
+    common_1.Post("/getUserByEmail"),
+    __param(0, common_1.Body('email')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "getUserByEmail", null);
 UserController = __decorate([
     common_1.Controller('user'),
     common_1.UseGuards(passport_1.AuthGuard('bearer'), roles_guard_1.RolesGuard),

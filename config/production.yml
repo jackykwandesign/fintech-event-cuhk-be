@@ -5,3 +5,9 @@ firebase:
   project_id: ""
   private_key: ""
   client_email: ""
+
+smtp:
+  host: ""
+  port: 25
+  email: ""
+  password: ""
