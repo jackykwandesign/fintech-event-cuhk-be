@@ -55,10 +55,10 @@ const smtpConfig = config.get('smtp')
 // }
 
 let smtpAccount = {
-    host: "smtp.cintec.cuhk.edu.hk",
+    host: "",
     port: 25,
-    email: "finteconf@cintec.cuhk.edu.hk",
-    password: "cin@1358",
+    email: "",
+    password: "",
 }
 
 @Injectable()
